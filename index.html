@@ -199,8 +199,47 @@
     font-size: 0.8rem;
     padding: 1.5rem 1rem 2.5rem;
   }
-  @media (max-width: 480px) {
-    .day-body { grid-template-columns: 70px 1fr; }
+  .info-card { overflow-x: auto; }
+
+  @media (max-width: 600px) {
+    header { padding: 1.6rem 1rem 1rem; }
+    header h1 { font-size: 1.3rem; }
+    header p { font-size: 0.85rem; }
+
+    nav.tabs {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      gap: 0;
+      padding: 0.6rem 0.6rem;
+    }
+    nav.tabs button {
+      flex: 1;
+      padding: 0.55rem 0.4rem;
+      font-size: 0.88rem;
+      border-radius: 8px;
+    }
+
+    main { padding: 1rem 0.7rem 2.5rem; }
+
+    h2 { font-size: 1.05rem; margin: 1.6rem 0 0.7rem; }
+
+    .day-head { font-size: 0.98rem; padding: 0.6rem 0.9rem; }
+    .day-body {
+      grid-template-columns: 1fr;
+      row-gap: 0.5rem;
+      padding: 0.8rem 0.9rem 0.9rem;
+    }
+    .slot-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      padding-top: 0;
+    }
+    .slot-content { font-size: 0.92rem; }
+
+    .info-card, .doc-card { padding: 0.85rem 0.9rem; font-size: 0.9rem; }
+    .doc-card h3 { font-size: 0.95rem; }
   }
 </style>
 </head>
