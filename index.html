@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>東京・河口湖行程 2026</title>
+<style>
+  :root {
+    --bg: #faf8f5;
+    --fg: #2b2622;
+    --muted: #6b6259;
+    --card: #ffffff;
+    --border: #e6ddd2;
+    --accent: #b85c38;
+    --accent-soft: #f3e4d8;
+    --header-bg: #2b2622;
+    --header-fg: #faf8f5;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1b1815;
+      --fg: #eee6dc;
+      --muted: #a89d90;
+      --card: #262220;
+      --border: #3a332c;
+      --accent: #e08a5e;
+      --accent-soft: #3a2b22;
+      --header-bg: #12100e;
+      --header-fg: #eee6dc;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1b1815; --fg: #eee6dc; --muted: #a89d90; --card: #262220;
+    --border: #3a332c; --accent: #e08a5e; --accent-soft: #3a2b22;
+    --header-bg: #12100e; --header-fg: #eee6dc;
+  }
+  :root[data-theme="light"] {
+    --bg: #faf8f5; --fg: #2b2622; --muted: #6b6259; --card: #ffffff;
+    --border: #e6ddd2; --accent: #b85c38; --accent-soft: #f3e4d8;
+    --header-bg: #2b2622; --header-fg: #faf8f5;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Noto Sans TC", "PingFang TC", sans-serif;
+    line-height: 1.6;
+  }
+  header {
+    background: var(--header-bg);
+    color: var(--header-fg);
+    padding: 2.5rem 1.5rem 2rem;
+    text-align: center;
+  }
+  header h1 {
+    margin: 0 0 0.4rem;
+    font-size: 1.6rem;
+    letter-spacing: 0.02em;
+  }
+  header p {
+    margin: 0;
+    color: #cbbfae;
+    font-size: 0.95rem;
+  }
+  main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem 3rem;
+  }
+  h2 {
+    font-size: 1.15rem;
+    margin: 2.2rem 0 0.9rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid var(--accent);
+    color: var(--accent);
+  }
+  .day-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+  }
+  .day-head {
+    background: var(--accent-soft);
+    padding: 0.7rem 1.1rem;
+    font-weight: 600;
+    font-size: 1.02rem;
+    color: var(--accent);
+  }
+  .day-body {
+    padding: 0.9rem 1.1rem 1.1rem;
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    row-gap: 0.7rem;
+    column-gap: 0.9rem;
+  }
+  .slot-label {
+    color: var(--muted);
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding-top: 0.1rem;
+  }
+  .slot-content {
+    font-size: 0.95rem;
+  }
+  .slot-content.empty {
+    color: var(--muted);
+  }
+  .slot-content ul {
+    margin: 0.2rem 0 0;
+    padding-left: 1.1rem;
+  }
+  .slot-content li { margin-bottom: 0.15rem; }
+  a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-soft); }
+  a:hover { border-bottom-color: var(--accent); }
+  .tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    background: var(--accent-soft);
+    color: var(--accent);
+    border-radius: 6px;
+    padding: 0.05rem 0.4rem;
+    margin-right: 0.3rem;
+  }
+  .info-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem 1.2rem;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+  }
+  .info-card table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.5rem;
+  }
+  .info-card td {
+    padding: 0.3rem 0.4rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .info-card td:first-child { color: var(--muted); width: 40%; }
+  footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.8rem;
+    padding: 1.5rem 1rem 2.5rem;
+  }
+  @media (max-width: 480px) {
+    .day-body { grid-template-columns: 70px 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>東京・河口湖行程</h1>
+  <p>2026 / 11/13（五）— 11/18（三）</p>
+</header>
+
+<main>
+
+<h2>每日行程</h2>
+
+<div class="day-card">
+  <div class="day-head">11/13（五）</div>
+  <div class="day-body">
+    <div class="slot-label">上午</div><div class="slot-content empty">—</div>
+    <div class="slot-label">午餐</div><div class="slot-content empty">—</div>
+    <div class="slot-label">下午</div><div class="slot-content empty">—</div>
+    <div class="slot-label">晚餐</div><div class="slot-content empty">—</div>
+    <div class="slot-label">晚上</div><div class="slot-content">接風，居酒屋：<a href="https://share.google/wlE0WY8Kwpcrs4y3W" target="_blank" rel="noopener">博多前炉ばた 一承 東京上野</a></div>
+  </div>
+</div>
+
+<div class="day-card">
+  <div class="day-head">11/14（六）</div>
+  <div class="day-body">
+    <div class="slot-label">上午</div><div class="slot-content">晴空塔</div>
+    <div class="slot-label">午餐</div><div class="slot-content empty">—</div>
+    <div class="slot-label">下午</div><div class="slot-content">淺草</div>
+    <div class="slot-label">晚餐</div><div class="slot-content">屋形船（含晚餐），淺草上船，有素食選項：<a href="https://www.ozmall.co.jp/restaurant/10305/" target="_blank" rel="noopener">ozmall 屋形船</a><br>竹內：<a href="https://linshibi.com/?p=19693" target="_blank" rel="noopener">參考文章</a></div>
+    <div class="slot-label">晚上</div><div class="slot-content empty">—</div>
+  </div>
+</div>
+
+<div class="day-card">
+  <div class="day-head">11/15（日）<span class="tag">河口湖賞楓一日遊</span></div>
+  <div class="day-body">
+    <div class="slot-label">上午</div><div class="slot-content">候選：他手合浜（精進湖）、西湖療癒之里根場</div>
+    <div class="slot-label">午餐</div><div class="slot-content empty">待定</div>
+    <div class="slot-label">下午</div><div class="slot-content">候選：大石公園、河口湖楓葉迴廊</div>
+    <div class="slot-label">晚餐</div><div class="slot-content empty">待定</div>
+    <div class="slot-label">晚上</div><div class="slot-content empty">待定</div>
+  </div>
+</div>
+
+<div class="day-card">
+  <div class="day-head">11/16（一）<span class="tag">箱根精華一日遊</span></div>
+  <div class="day-body">
+    <div class="slot-label">上午</div><div class="slot-content">候選：大涌谷、蘆之湖（搭乘海賊船）</div>
+    <div class="slot-label">午餐</div><div class="slot-content empty">待定</div>
+    <div class="slot-label">下午</div><div class="slot-content">候選：箱根雕刻之森美術館（內有足湯）、箱根神社（水中鳥居）→ 回東京</div>
+    <div class="slot-label">晚餐</div><div class="slot-content">
+      家裡附近用餐，預計 19:00：<a href="https://maps.app.goo.gl/8QZP6RC794CfMvUZ7?g_st=ic" target="_blank" rel="noopener">餐廳地圖連結</a>
+      <ul>
+        <li>上野晚餐候選（可訂位，素食可提前告知店家變更餐點）：</li>
+        <li><a href="https://share.google/cpoqwOnxQ1Pr2LV8w" target="_blank" rel="noopener">過門香 上野バンブーガーデン店</a></li>
+        <li><a href="https://share.google/onBj1I3rWp46JEho0" target="_blank" rel="noopener">音音 上野バンブーガーデン店</a></li>
+      </ul>
+    </div>
+    <div class="slot-label">晚上</div><div class="slot-content">到家裡參觀，順便拿行李</div>
+  </div>
+</div>
+
+<div class="day-card">
+  <div class="day-head">11/17（二）</div>
+  <div class="day-body">
+    <div class="slot-label">上午</div><div class="slot-content">明治神宮</div>
+    <div class="slot-label">午餐</div><div class="slot-content">FAMiRES（可預約）：<a href="https://share.google/oeNOw2lEjgdCD3LEy" target="_blank" rel="noopener">連結</a></div>
+    <div class="slot-label">下午</div><div class="slot-content">Shibuya Sky</div>
+    <div class="slot-label">晚餐</div><div class="slot-content">台湾料理 桃園：<a href="https://share.google/CfizmqCpZnIAUZRpX" target="_blank" rel="noopener">連結</a></div>
+    <div class="slot-label">晚上</div><div class="slot-content empty">—</div>
+  </div>
+</div>
+
+<div class="day-card">
+  <div class="day-head">11/18（三）</div>
+  <div class="day-body">
+    <div class="slot-label">上午</div><div class="slot-content">招待長輩喝茶聊天</div>
+    <div class="slot-label">午餐</div><div class="slot-content empty">待定</div>
+    <div class="slot-label">下午</div><div class="slot-content empty">待定</div>
+    <div class="slot-label">晚餐</div><div class="slot-content empty">待定</div>
+    <div class="slot-label">晚上</div><div class="slot-content empty">待定</div>
+  </div>
+</div>
+
+<h2>河口湖包車費用</h2>
+<div class="info-card">
+  <table>
+    <tr><td>總價</td><td>NT$40,000</td></tr>
+    <tr><td>已付訂金</td><td>NT$6,000</td></tr>
+    <tr><td>尾款</td><td>NT$34,000（約 ¥169,000）</td></tr>
+    <tr><td>付款時間</td><td>尾款於第一天（11/15）先付給司機</td></tr>
+  </table>
+</div>
+
+<h2>11/15 住宿資訊</h2>
+<div class="info-card">
+  飯店：<a href="https://www.mizunosato.jp" target="_blank" rel="noopener">水の里（Mizunosato）</a>（含早晚餐）
+  <table>
+    <tr><td>3人房（富士山景）</td><td>¥95,040</td></tr>
+    <tr><td>4人房</td><td>¥55,723</td></tr>
+    <tr><td>2人房（湖景）</td><td>¥47,520</td></tr>
+  </table>
+</div>
+
+<h2>妹妹東京住宿資訊</h2>
+<div class="info-card">
+  <a href="https://www.airbnb.com.tw/rooms/1467767198495464605?unique_share_id=4fc8f507-61fb-436c-94ec-4dc155404ceb&viralityEntryPoint=1&s=76&source_impression_id=p3_1786264059_P3xEZR7enbqsYYTz" target="_blank" rel="noopener">Airbnb 訂房連結</a><br>
+  地址：3-chōme-3-11 Negishi, Taito City, Tokyo 110-0003
+</div>
+
+</main>
+
+<footer>行程初版・持續更新中</footer>
+
+</body>
+</html>
