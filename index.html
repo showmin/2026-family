@@ -50,7 +50,7 @@
   header {
     background: var(--header-bg);
     color: var(--header-fg);
-    padding: 2.5rem 1.5rem 2rem;
+    padding: 2.5rem 1.5rem 1.2rem;
     text-align: center;
   }
   header h1 {
@@ -63,11 +63,38 @@
     color: #cbbfae;
     font-size: 0.95rem;
   }
+  nav.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    background: var(--header-bg);
+    padding: 0 1rem 1.2rem;
+    flex-wrap: wrap;
+  }
+  nav.tabs button {
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 0.5rem 1.2rem;
+    border-radius: 999px;
+    border: 1px solid #4a423a;
+    background: transparent;
+    color: #cbbfae;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+  }
+  nav.tabs button.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #1b1815;
+  }
   main {
     max-width: 960px;
     margin: 0 auto;
     padding: 1.5rem 1rem 3rem;
   }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
   h2 {
     font-size: 1.15rem;
     margin: 2.2rem 0 0.9rem;
@@ -75,6 +102,7 @@
     border-bottom: 2px solid var(--accent);
     color: var(--accent);
   }
+  h2:first-child { margin-top: 0; }
   .day-card {
     background: var(--card);
     border: 1px solid var(--border);
@@ -142,6 +170,29 @@
     border-bottom: 1px solid var(--border);
   }
   .info-card td:first-child { color: var(--muted); width: 40%; }
+  .doc-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.2rem 1.4rem;
+    margin-bottom: 1rem;
+    font-size: 0.92rem;
+  }
+  .doc-card h3 {
+    font-size: 1rem;
+    color: var(--accent);
+    margin: 1.3rem 0 0.5rem;
+  }
+  .doc-card h3:first-child { margin-top: 0; }
+  .doc-card p { margin: 0.4rem 0; }
+  .doc-card .warn {
+    color: var(--accent);
+  }
+  .doc-card hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 1rem 0;
+  }
   footer {
     text-align: center;
     color: var(--muted);
@@ -160,9 +211,15 @@
   <p>2026 / 11/13（五）— 11/18（三）</p>
 </header>
 
+<nav class="tabs">
+  <button class="tab-btn active" data-tab="itinerary">行程</button>
+  <button class="tab-btn" data-tab="costs">費用相關</button>
+  <button class="tab-btn" data-tab="other">其他</button>
+</nav>
+
 <main>
 
-<h2>每日行程</h2>
+<section id="itinerary" class="tab-panel active">
 
 <div class="day-card">
   <div class="day-head">11/13（五）</div>
@@ -237,6 +294,10 @@
   </div>
 </div>
 
+</section>
+
+<section id="costs" class="tab-panel">
+
 <h2>河口湖包車費用</h2>
 <div class="info-card">
   <table>
@@ -257,15 +318,92 @@
   </table>
 </div>
 
+</section>
+
+<section id="other" class="tab-panel">
+
 <h2>妹妹東京住宿資訊</h2>
 <div class="info-card">
   <a href="https://www.airbnb.com.tw/rooms/1467767198495464605?unique_share_id=4fc8f507-61fb-436c-94ec-4dc155404ceb&viralityEntryPoint=1&s=76&source_impression_id=p3_1786264059_P3xEZR7enbqsYYTz" target="_blank" rel="noopener">Airbnb 訂房連結</a><br>
   地址：3-chōme-3-11 Negishi, Taito City, Tokyo 110-0003
 </div>
 
+<h2>包車廠商說明（熊本旅遊）</h2>
+<div class="doc-card">
+  <p>您好～小編這邊已經確認收到您的款項了。</p>
+  <p>➜ 定金：新台幣共「6000」元</p>
+  <p>已馬上為您跟司機預留車輛。如需要幫您規劃行程的話，建議您可以先和我們討論一下行程的部分，幫您先規劃好。</p>
+
+  <h3>熊本旅遊服務補充說明</h3>
+  <p>若您這邊只付定金，請先決定一下尾款的付款方式，決定完之後無法更動，尾款兩種付款方式：</p>
+  <p>❶ 給司機日幣現金：第一日下車之前，將剩餘的所有包車尾款轉交日幣現金給司機（小編會在付款定金當天幫您算好）。</p>
+  <p>❷ 使用匯款、Line pay匯款：出發前一日需要將剩餘所有尾款匯款完成。</p>
+  <p class="warn">⚠️ 決定好尾款支付方式後，後續無法再做更動。</p>
+
+  <h3>代訂機票</h3>
+  <p>➜ 我們有認識的旅行社可以代為購買機票，費用會實報實銷給您無賺取差價，因此一但機票購買成功，不接受任何「修改」、「取消」等更動。</p>
+  <p class="warn">⚠️ 若重大天災導致飛機無法起飛，後續處理將按照航空公司公告處理，無法要求馬上退款，依照航空公司退款的時間、金額為主。</p>
+
+  <h3>代訂餐廳、景點門票</h3>
+  <p>➜ 可免費預訂包車當日的餐廳，一天一家為限。需請貴賓自行決定好用餐時段後「準時」到場。</p>
+  <p>我們可以推薦一些網路評價不錯的餐廳，但如果沒有喜歡的，請自行找好喜歡的餐廳後，填寫餐廳訂位表格，會幫您安排訂位；如店家不接電話或無法訂位，就只能現場等候位子。</p>
+  <p>（日本對於訂位相當重視，訂位成功請「準時」到場，「不接受」取消、延後到場、更改訂位。若有餐廳罰款的部分，需請客人自行負責所有費用）</p>
+  <p class="warn">⚠️ 若重大天災導致飛機無法起飛沒辦法用餐者，因代訂餐廳屬於額外代訂，我們沒有收額外費用，可以協助詢問餐廳方能否免費取消，若餐廳需收食材費用，也需請客人自行負擔。</p>
+
+  <h3>代訂住宿</h3>
+  <p>➜ 可以幫忙代訂包車當日的住宿，預訂前都會做最後確認，確認之後需請您先付清房間費用，收到款項後幫您預訂飯店，訂房完成後皆「無法做更改、取消」。</p>
+  <p>（小編能推薦一兩間評價不錯的飯店給您參考，但如果沒有喜歡的話，需自行在Booking上尋找。）</p>
+  <p class="warn">⚠️ 若重大天災導致飛機無法起飛沒辦法入住者，因飯店屬於額外代訂，我們沒有收額外費用，可以協助詢問飯店方能否免費取消，若無法免費取消，飯店費用則無法退款給您。</p>
+
+  <h3>出遊的專屬群組</h3>
+  <p>➜ 出發前1天會創立一個專屬群組，裡面會有司機、小編、您與同行家人，有任何問題或是要求都可以在裡面提出，問題都可以幫您立即處理。</p>
+
+  <h3>如要取消／大變更行程</h3>
+  <p>➜ 需取消或者大變更行程請提前「兩週前」跟客服提出，逾時則無法處理。（行程小小改動則不用兩週前告知）</p>
+  <p>➜ 取消成功後：原付款的定金不予退還；原先付款全額的，退還總金額70%給您</p>
+  <p>➜ 出發前兩週才取消者，無法取消，需要付款此趟行程100%的費用。</p>
+
+  <hr>
+
+  <h3>包車價格</h3>
+  <p>11/15 河口湖一日遊 20,000元<br>11/16 箱根一日遊 20,000元</p>
+  <p>🚗 車型：綠牌考斯特（13人）</p>
+  <p>報價：包車共十小時，總金額2天共新台幣40,000元</p>
+  <p>📍 包車均包含：日本消費稅、服務費、油費、停車費、高速費、過路費、塞車費、保險費、司機住宿、司機餐食，一價全含。</p>
+  <p class="warn">📛 以上報價僅有效五天，若超過時間請詢問客服最新的報價，已預留定金保留者，則報價不變。</p>
+  <p>🔖 若是阿爾法車型，無特別加價指定新舊車款則阿爾法二代/三代/四代/威爾法隨機安排。</p>
+  <p>📌 以上為包車+純司機的費用，不含下車導覽，如需要額外導覽需另請一位導遊。</p>
+
+  <h3>產生額外費用的情況</h3>
+  <p>❶ 臨時跨區：正常按照原本的路線走，不會收取額外費用，但如果當天臨時增加行程是需要跨區，會有額外的高速費用。</p>
+  <p>❷ 用車超時：每日用車時間會先跟您說明8hr或是10hr，如下車時間超過用車時間，會有超時費用，請務必注意用車時間。司機可以建議回程時間但如果因塞車延誤到，一樣需要負擔超時費。（超時未滿一小時一樣按照一小時計算，超時費用以各車型而異，可先詢問小編）</p>
+  <p>❸ 凌晨班/半夜班：早上7:00前上車的話屬於凌晨班，晚上10:00以後下車屬於半夜班。</p>
+
+  <h3>機場接機／送機</h3>
+  <p>日本機場已不接受私家車進去乘載客人，若有疑慮的話，機場接送當日建議加價選擇「綠牌車」為您服務；非機場接送的一日遊行程可以一樣選擇白牌車輛服務。（若無加價購買綠牌車，一日遊、接送機皆是安排白牌車報價服務。）</p>
+  <p>📌 兒童座椅、跨區域、過敏體質以及任何需求請提前告知（兒童座椅收費：第一張免費，第二張起每天2000日圓/張座椅）</p>
+
+  <hr>
+  <h3>聯絡方式</h3>
+  <p>熊本官方 LINE：@235vqogm<br>熊本官方 IG：kumatrip.tw<br>熊本官方 FB：熊本旅遊kumatrip</p>
+</div>
+
+</section>
+
 </main>
 
 <footer>行程初版・持續更新中</footer>
+
+<script>
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.tab).classList.add('active');
+    });
+  });
+</script>
 
 </body>
 </html>
