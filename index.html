@@ -152,6 +152,90 @@
     padding: 0.05rem 0.4rem;
     margin-right: 0.3rem;
   }
+  .badge-booked {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    background: #e6f4ea;
+    color: #137333;
+    border: 1px solid #ceead6;
+    border-radius: 6px;
+    padding: 0.1rem 0.45rem;
+    margin-right: 0.35rem;
+    vertical-align: middle;
+  }
+  @media (prefers-color-scheme: dark) {
+    .badge-booked {
+      background: #143823;
+      color: #81c995;
+      border-color: #1e5e3a;
+    }
+  }
+  :root[data-theme="dark"] .badge-booked {
+    background: #143823;
+    color: #81c995;
+    border-color: #1e5e3a;
+  }
+  :root[data-theme="light"] .badge-booked {
+    background: #e6f4ea;
+    color: #137333;
+    border-color: #ceead6;
+  }
+  .booking-detail {
+    margin: 0.4rem 0 0.3rem;
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+  .code-highlight {
+    background: var(--accent-soft);
+    color: var(--accent);
+    padding: 0.1rem 0.35rem;
+    border-radius: 4px;
+    font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+    font-size: 0.95em;
+    font-weight: 600;
+  }
+  .voucher-toggle {
+    margin-top: 0.5rem;
+    border: 1px dashed var(--border);
+    border-radius: 8px;
+    background: rgba(0,0,0,0.02);
+    overflow: hidden;
+  }
+  :root[data-theme="dark"] .voucher-toggle {
+    background: rgba(255,255,255,0.03);
+  }
+  .voucher-toggle summary {
+    padding: 0.45rem 0.75rem;
+    font-size: 0.86rem;
+    font-weight: 600;
+    color: var(--accent);
+    cursor: pointer;
+    user-select: none;
+  }
+  .voucher-toggle summary:hover {
+    text-decoration: underline;
+  }
+  .voucher-preview {
+    padding: 0.6rem 0.75rem 0.8rem;
+    border-top: 1px dashed var(--border);
+  }
+  .voucher-preview img {
+    max-width: 250px;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    display: block;
+  }
+  .img-hint {
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-top: 0.35rem;
+  }
   .info-card {
     background: var(--card);
     border: 1px solid var(--border);
@@ -300,12 +384,21 @@
     <div class="slot-label">午餐</div><div class="slot-content empty">蘆之湖畔餐廳（待定）</div>
     <div class="slot-label">下午</div><div class="slot-content">箱根雕刻之森美術館（天然溫泉足湯）➡️ 16:00 啟程回東京</div>
     <div class="slot-label">晚餐</div><div class="slot-content">
-      家裡附近用餐，預計 19:00：<a href="https://maps.app.goo.gl/8QZP6RC794CfMvUZ7?g_st=ic" target="_blank" rel="noopener">餐廳地圖連結</a>
-      <ul>
-        <li>上野晚餐候選（可訂位，素食可提前告知店家變更餐點）：</li>
-        <li><a href="https://share.google/cpoqwOnxQ1Pr2LV8w" target="_blank" rel="noopener">過門香 上野バンブーガーデン店</a></li>
-        <li><a href="https://share.google/onBj1I3rWp46JEho0" target="_blank" rel="noopener">音音 上野バンブーガーデン店</a></li>
-      </ul>
+      <span class="badge-booked">✅ 已訂位 19:00</span><a href="https://share.google/onBj1I3rWp46JEho0" target="_blank" rel="noopener">音音 上野バンブーガーデン店</a>
+      <div class="booking-detail">
+        • 予約番号：<strong class="code-highlight">WYRW56CEW4</strong><br>
+        • 人數：12名（大人10名、兒童2名）／ 桌席［禁煙］／ 限2小時<br>
+        • 備註：素食可提前告知店家變更餐點
+      </div>
+      <details class="voucher-toggle">
+        <summary>📱 點擊展開訂位截圖（到店出示）</summary>
+        <div class="voucher-preview">
+          <a href="images/otooto-reservation.png" target="_blank" title="點擊開啟原圖">
+            <img src="images/otooto-reservation.png" alt="音音 訂位截圖" loading="lazy">
+          </a>
+          <div class="img-hint">點擊圖片可另開高解析度大圖</div>
+        </div>
+      </details>
     </div>
     <div class="slot-label">晚上</div><div class="slot-content empty">—</div>
   </div>
@@ -317,7 +410,7 @@
     <div class="slot-label">上午</div><div class="slot-content">日式庭園／景點候選（小石川後樂園 / 濱離宮 / 築地 / 六義園）</div>
     <div class="slot-label">午餐</div><div class="slot-content empty">待定（依上午景點安排，或至銀座各大百貨用餐）</div>
     <div class="slot-label">下午</div><div class="slot-content">銀座購物（中央通商圈、各大百貨）</div>
-    <div class="slot-label">晚餐</div><div class="slot-content">台湾料理 桃園：<a href="https://share.google/CfizmqCpZnIAUZRpX" target="_blank" rel="noopener">連結</a></div>
+    <div class="slot-label">晚餐</div><div class="slot-content"><span class="badge-booked">✅ 已訂位 19:00（12位）</span>台湾料理 桃園：<a href="https://share.google/CfizmqCpZnIAUZRpX" target="_blank" rel="noopener">連結</a></div>
     <div class="slot-label">晚上</div><div class="slot-content empty">—</div>
   </div>
 </div>
@@ -374,6 +467,28 @@
     <tr><td>怡惠</td><td>回台灣，起飛時間 12:25（成田第 1 航廈）</td></tr>
     <tr><td>楚詒</td><td>回台灣，起飛時間 20:10（成田第 2 航廈）</td></tr>
   </table>
+</div>
+
+<h2>餐廳訂位憑證</h2>
+<div class="info-card">
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.6rem; flex-wrap: wrap; gap: 0.5rem;">
+    <strong style="color: var(--accent); font-size: 1.02rem;">11/16（一）晚餐：音音 上野バンブーガーデン店</strong>
+    <span class="badge-booked">✅ 已訂位 19:00</span>
+  </div>
+  <table>
+    <tr><td>予約番号</td><td><strong class="code-highlight">WYRW56CEW4</strong></td></tr>
+    <tr><td>預約時間</td><td>11月16日(月) 19:00～（滯在可能時間 2時間）</td></tr>
+    <tr><td>預約人數</td><td>12名（うちお子様 2名）樣</td></tr>
+    <tr><td>座位／吸菸</td><td>テーブル席［禁煙］（無包廂費）</td></tr>
+    <tr><td>套餐／費用</td><td>指定なし（現場點餐，お会計は当日）</td></tr>
+    <tr><td>店家地址</td><td>東京都台東區上野公園1-52 上野バンブーガーデン 2F（<a href="https://share.google/onBj1I3rWp46JEho0" target="_blank" rel="noopener">Google 地圖</a>）</td></tr>
+  </table>
+  <div style="margin-top: 0.9rem;">
+    <div style="font-size: 0.85rem; color: var(--muted); margin-bottom: 0.4rem;">📱 訂位確認畫面（到店可出示，點擊另開大圖）：</div>
+    <a href="images/otooto-reservation.png" target="_blank">
+      <img src="images/otooto-reservation.png" alt="音音 訂位截圖" style="max-width: 280px; width: 100%; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+    </a>
+  </div>
 </div>
 
 <h2>11/17（二）上午景點方案比較（下午接銀座購物）</h2>
